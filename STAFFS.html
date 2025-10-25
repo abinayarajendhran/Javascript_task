@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+      <h3>User details:</h3>
+    <table border="1">
+      <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+      </thead>
+      <tbody id="one">
+
+      </tbody>
+    </table>
+    </div>
+  </body>
+  <script>
+    function fun() {
+      let data = JSON.parse(localStorage.getItem("data"));
+      console.log(data);
+      data.map((v, i) => {
+        if (v.role == "user") {
+         document.getElementById("one").innerHTML+=`
+         <tr>
+          <td>${v.name}</td>
+          <td>${v.email}</td>
+          <td>${v.role}</td>
+         </tr>
+         `
+        }
+      });
+    }
+    fun();
+  </script>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Page</title>
+</head>
+<body>
+  <h2 id="welcome"></h2>
+</body>
+ <script>
+    function showWelcome() {
+      let data = JSON.parse(localStorage.getItem("user"));
+      
+      document.getElementById("welcome").innerHTML = "Welcome, " + data.name ;
+    }
+    showWelcome()
+  </script>
+</html>
